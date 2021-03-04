@@ -1,0 +1,5 @@
+Irvin Samuel
+Lab2
+
+1. After doing various tests, I noticed that copying the files using
+system calls was around 20 times faster than copying using functions.

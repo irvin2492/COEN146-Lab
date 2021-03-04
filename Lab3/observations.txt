@@ -1,0 +1,68 @@
+Irvin Samuel
+COEN146 Lab3
+18 January 2021
+
+Part 1:
+netstat - it prints a large number of TCP connections (TCP4 and TCP6) all with varying
+local and foreign (end host) addresses indicating that they are all being
+used by different applications to transmit data to varying locations.
+
+ifconfig - prints all of the active interfaces (sockets, ports, etc..) on the current system
+
+hostname- prints the name of the current host; in my case it was the name of my computer.
+
+ping- sends a series of data packets to some specified host (IP) to determine
+connectivity status and RTT. It gives a list of how many data packets sent and the time
+taken to return
+
+traceroute - prints out the name & address of each hop on the route to the destination
+and the size of each packet. It also prints connection times to reach each node.
+This is useful to test the end-to-end connection times for different hosts, which the
+command also provides.
+
+telnet- establishes a connection from the local host to some end host.
+since we are connected to a another server, we can choose which port to send data over.
+For example connecting to port 80 will allow me to send GET/POST/etc.. messages
+via HTTP.
+
+host/dig - Running the host command gives a list of the name servers listed for a
+particular website along with its IP addresses
+
+route - allows the user to make changes to the system's routing tables used by the software to determine
+ what port to send data packets through. It can manipulate routes to different destinations.
+
+arp - prints a list of all IP addresses for devices connected to the router and their corresponding
+MAC addresses
+
+
+Part 2:
+$ping -s 32 109.239.56.146
+-Sending 32 bytes per packet to a server in Strasbourg, France was successful with a 190.635ms
+average and a 0.0% packet loss.
+-1048 bytes, 224.742 ms and 0.0% packet loss
+
+ $ping -s 32 142.250.72.206
+ -Sending 32 bytes per packet to Google's server in Mountain View was successful
+with a 21.970ms average and a 0.0% packet loss.
+-1048 bytes, 24.716 ms and 0.0% packet loss
+
+$ping -s 32 14.102.127.255
+-Sending 32 bytes per packet to a server in Delhi,India was successful
+with a 307.810ms average and a 5.9% packet loss.
+-1048 bytes, 372.923 ms and 7.7% packet loss
+
+-Given that Delhi is the furthest geographical location from me in Santa Clara,
+it makes sense that it would take the longest time to return data from there.
+
+Part 4:
+Calling telnet on gaia.cs.umass.edu returns an HTML file.
+The title of the file is "Interactive Problems, Computer Networking: A Top Down
+ Approach" which is in HTTP 1.1
+ The file is separated by headers which represent chapters and each chapter has
+ lists of links to different practice problems.
+
+ Part 5:
+ Connecting to 109.239.56.146 over port 80 connected successfully. connecting over port 3389 was refused
+ and I was unable to establish a connection. The same was true for connecting to
+ 142.250.72.206 and also for 14.102.127.255. I am unsure what caused this since I
+ ran the command multiple times and it was not able to connect successfully.

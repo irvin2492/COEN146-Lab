@@ -1,0 +1,18 @@
+Part 1 (Running programs with forked processes):
+
+#2: There was a segmentation fault when I tried to run the program likely because
+there was no argument passed for a time to sleep
+#4:
+-3000 microseconds: The parent process started first and it finished last
+-500: Same results as 3000 but the program ran much faster. This is due to the fact that
+it had to sleep for less time.
+-5000: Same results as the test with 3000 but it took longer to finish running.
+
+Part 2 (Running programs with threading):
+
+#5: Overall, the programs ran faster with threading than with forked processes.
+
+-3000 microseconds: The parent process started first and it finished last
+-500: Same results as 3000 but the program ran much faster. This is due to the fact that
+it had to sleep for less time.
+-5000: Same results as the test with 3000 but it took longer to finish running.
